@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#93000a",
+                        "on-secondary": "#313030",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#690005",
+                        "surface-container-lowest": "#0e0e0f",
+                        "on-surface": "#e5e2e3",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#ffddd9",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline-variant": "#434656",
+                        "on-primary": "#002682",
+                        "primary": "#b7c4ff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#0052ff",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-fixed": "#dde1ff",
+                        "on-surface-variant": "#c3c5d9",
+                        "outline": "#8d90a2",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "secondary-container": "#474746",
+                        "surface-bright": "#3a393a",
+                        "tertiary-fixed-dim": "#ffb4ab",
+                        "surface-container-low": "#1c1b1c",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "on-primary-fixed": "#001452",
+                        "on-background": "#e5e2e3",
+                        "on-tertiary-fixed": "#410002",
+                        "surface-container-highest": "#353436",
+                        "inverse-on-surface": "#313031",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary-container": "#cc1018",
+                        "inverse-primary": "#004ced",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface": "#131314",
+                        "surface-tint": "#b7c4ff",
+                        "surface-container": "#201f20",
+                        "on-primary-container": "#dfe3ff",
+                        "surface-dim": "#131314",
+                        "tertiary": "#ffb4ab",
+                        "secondary": "#c8c6c5",
+                        "background": "#131314"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 32, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .bidding-glow {
+            box-shadow: 0 0 40px 0 rgba(0, 82, 255, 0.12);
+        }
+        .urgency-pulse {
+            text-shadow: 0 0 20px rgba(204, 16, 24, 0.6);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131314]/80 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-blue-500/10">
+<div class="flex justify-between items-center px-6 py-3 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-white font-headline">BidLive</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#0052ff] font-bold font-headline transition-colors" href="#">Live</a>
+<a class="text-slate-400 font-headline hover:bg-white/5 transition-colors px-3 py-1 rounded" href="#">Catalog</a>
+<a class="text-slate-400 font-headline hover:bg-white/5 transition-colors px-3 py-1 rounded" href="#">Watchlist</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container/50 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2 border border-white/5">
+<span class="material-symbols-outlined text-[#0052ff] text-sm">account_balance_wallet</span>
+<span class="font-label text-sm font-bold text-white">$24,500.00</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-white/5 cursor-pointer transition-colors">
+<img alt="User avatar" class="w-8 h-8 rounded-full object-cover grayscale brightness-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMILku5mEHizOzE78jmEMaVzC_BJdAdbQ-oIOmITysmRKoufVL6-hmp-FQyj6IITk1XVMSJJtptwY4Lnp8vc5WieGWUGpgcxCiZ4espjZCtd5q6zs0xPME7RlhB5O1nA1dUMoOo9PUzGO7ZUS2Ws28mk__LorC2mv2b0QRRHZBng2VeP5OG50P1v3gxShXs_ECPEkWOD4R_HMc3DTXyFl1Qrv1yS_7l-1eVf4a8vMjxXvGl5liMrSdn75HGOfIowyHDU6s_bPISuM"/>
+<span class="font-headline text-sm font-bold text-white">Profile</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-20 px-6 max-w-[1920px] mx-auto min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Gallery & Details -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Main Gallery -->
+<section class="space-y-4">
+<div class="relative aspect-[16/9] rounded-xl overflow-hidden glass-panel group">
+<img alt="Lot #402: 1961 Mercedes-Benz 300SL Roadster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq0Xufy3zrSkT7DooJFbqPdVRUu2RiFpk0OCyAMMHUJ2fXRfMIOcAe_i9y7MgDHjtcdcs4HVYS_4x7_EMalomPqKnTvZZi0iCzZLNPVdOWwEKgzqeGAgcSLk-DGID5PFwbOBJyIkNDZrz7GfgR7U5zbf3peUG76iaWwIvKH_Twnb9PuQOt6e2e7NbSziX_EEyYRAqR3xBlGItQNJfa6IEu4q7C6ziF9I6xxrDhb-uR7PfEHUiLiKP-XSD5FcEpfnD-M1SdR3Pg9gM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 flex gap-2">
+<span class="bg-black/40 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 font-label text-xs tracking-widest uppercase text-white">Exterior</span>
+<span class="bg-black/20 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 font-label text-xs tracking-widest uppercase text-white/50">Interior</span>
+<span class="bg-black/20 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 font-label text-xs tracking-widest uppercase text-white/50">Engine</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-primary-container/40 glass-panel">
+<img alt="Detail 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA-VcWFTuqemSVyApYNVOpwJ2wRQ9HFoQbtc5usqz2Ga-vHIXlu4hugypLSgSFtVVehBD7gzv8zkNQgQAGTJH7ZThERZa2v8EnxxlWizXWxKc2reyZ-0xGHt4133bzhDkzzyiyWR7HMYJ-NT4lcQK21hzx7f-qtc_ychvThtl5rfS10Y96SvqsLR0NiNNR87ceMRjiez9_29WcB6h2EXsSWZcOLeb5Tizr3aSshWX1NtS7ehHAddR5HoBf1K27mcIRxsrwGdyyixo"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden glass-panel opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Detail 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFzYUS8zybjs3q6HmeLROHrF4RM4jAcnm0Oq6pLbAZFK5JiV2_aXSbgSV_G3946rqVK-cn_qF1Cr4UClYa-c06Ith6T12EP1Qu0ICxzNwUc73460g_OMmZdlI_RSHlBHKugyW0eNM0lST7aska7FMBkyEfMxMbjYacpJHr2U6wZnG79io56REJBF_ige9co8X3PC-lrzDxcHloDj_QiaKpIhA5sxN2ChHXVh1Jyr810KoOH1NNNJO8TCDtXYvBZXczdWq10lMUys8"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden glass-panel opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<img alt="Detail 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbkJweJwSUeWbEV2Smlox_aQkNYxGSIFJV9paDor5N9mcKB6f2_2xh67VWlWcxthntyYKt98sULKwvCkNREiTWOfbGYCMyejgGQBS8Zv1Jq-aY2x-GNMZ5mP6m1R6eGoEDCIigp6M1Vc608b8gtRXFDRAmHlPYZkjT2MRw4aWDIhh0ksqsqPP7Y3B5BeNklARCsRcjlHCaEgpadLj_gyCdDv-UoVs6hrqzHYVpxtg11AF5HDJglLWYXgiF_kfVqKFsCFdwG4bN6v0"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden glass-panel relative group cursor-pointer opacity-60 hover:opacity-100 transition-opacity">
+<img alt="Detail 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQRFbvzhht2i-C1rAcGFgRSPt37S9ZMJ5lXjSgeetz1W5ATfKvWxrw81wFJ4w75qqshdWegBz1EL_ubniBGYa7bIyU_lzX9JLtofjLMMHuet_ZIwuonPhC3vdCW9oo8oMhMth0clxDvjaLTlryAXJI6IbLyhpG-qhZmNkHtFZlizQLpd8eHReLB8NCPGmqvr3EYy0PZhUxemYnqfobJBzGzdpSNeivHbCn2jWTW8jspiCZgJ4QqNFAHZn4vKVhrxWfK9XgDVfwNIg"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[2px]">
+<span class="font-label text-white font-bold text-lg">+12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Item Info -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="md:col-span-2 space-y-8 glass-panel p-8 rounded-2xl">
+<div class="space-y-2">
+<span class="font-label text-xs text-primary-container tracking-[0.2em] uppercase font-bold">Lot #402</span>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-white">1961 Mercedes-Benz 300SL Roadster</h1>
+</div>
+<p class="text-on-surface-variant font-body leading-relaxed text-lg">
+                            One of only 1,858 Roadsters built, this matching-numbers example is finished in its original silver-blue metallic over premium Oxblood leather. Recently emerged from a multi-year restoration by specialist Paul Russell &amp; Company. Complete provenance records including the original factory build sheet.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<div class="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface">Authenticated</span>
+</div>
+<div class="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface">Service History</span>
+</div>
+<div class="flex items-center gap-2 bg-white/5 backdrop-blur-md px-4 py-2 rounded-lg border border-white/5">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-label text-xs uppercase tracking-wider text-on-surface">Concours Grade</span>
+</div>
+</div>
+</div>
+<div class="space-y-6 glass-panel p-8 rounded-2xl hidden md:flex flex-col justify-center">
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase text-slate-500 tracking-widest">Year</span>
+<p class="font-headline font-bold text-lg text-white">1961</p>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase text-slate-500 tracking-widest">Mileage</span>
+<p class="font-headline font-bold text-lg text-white">24,300 Miles</p>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase text-slate-500 tracking-widest">Engine</span>
+<p class="font-headline font-bold text-lg text-white">2,996 cc Inline-6</p>
+</div>
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase text-slate-500 tracking-widest">Trans</span>
+<p class="font-headline font-bold text-lg text-white">4-Speed Manual</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Bidding Panel -->
+<div class="lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<!-- Bidding Panel -->
+<div class="glass-panel rounded-2xl overflow-hidden bidding-glow border border-white/10">
+<!-- Countdown -->
+<div class="bg-tertiary-container/10 px-8 py-6 flex flex-col items-center justify-center text-center border-b border-white/5">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-tertiary mb-2">Auction Closing In</span>
+<div class="flex gap-4 items-center">
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold text-tertiary urgency-pulse">00</span>
+<span class="text-[9px] font-label uppercase text-tertiary/60">Min</span>
+</div>
+<span class="text-4xl font-headline font-extrabold text-tertiary">:</span>
+<div class="flex flex-col">
+<span class="text-4xl font-headline font-extrabold text-tertiary urgency-pulse">24</span>
+<span class="text-[9px] font-label uppercase text-tertiary/60">Sec</span>
+</div>
+</div>
+</div>
+<!-- Current Bid Section -->
+<div class="px-8 py-8 space-y-4">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<span class="font-label text-[10px] uppercase tracking-widest text-slate-400">Current Highest Bid</span>
+<h2 class="text-5xl font-headline font-extrabold text-white tracking-tighter leading-none">$1,245,000</h2>
+</div>
+<div class="flex items-center gap-2 bg-primary-container/20 px-3 py-1 rounded-full border border-primary-container/20">
+<div class="w-2 h-2 rounded-full bg-[#00ff88] animate-pulse"></div>
+<span class="font-label text-[10px] uppercase font-bold text-[#00ff88]">Active</span>
+</div>
+</div>
+<!-- Bid History Feed -->
+<div class="pt-6 h-48 overflow-y-auto space-y-4 scroll-smooth pr-2 custom-scrollbar">
+<div class="flex justify-between items-center opacity-100 bg-white/5 p-3 rounded-lg border border-white/5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center font-label text-xs">A</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-white font-headline">Anonymous Collector</span>
+<span class="text-[10px] text-slate-500 font-label uppercase">Seconds ago</span>
+</div>
+</div>
+<span class="font-label font-bold text-white">$1,245,000</span>
+</div>
+<div class="flex justify-between items-center opacity-60 p-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-label text-xs">J</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-300 font-headline">JP-Heritage</span>
+<span class="text-[10px] text-slate-500 font-label uppercase">2 mins ago</span>
+</div>
+</div>
+<span class="font-label font-bold text-slate-300">$1,240,000</span>
+</div>
+<div class="flex justify-between items-center opacity-40 p-3">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center font-label text-xs">S</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-400 font-headline">Silverstone_A</span>
+<span class="text-[10px] text-slate-500 font-label uppercase">5 mins ago</span>
+</div>
+</div>
+<span class="font-label font-bold text-slate-400">$1,235,000</span>
+</div>
+</div>
+</div>
+<!-- Bidding Controls -->
+<div class="px-8 pb-8 pt-4 space-y-6">
+<div class="space-y-4">
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-white/5 hover:bg-white/10 text-white font-label font-bold py-2 rounded-lg text-sm border border-white/5 transition-colors active:scale-95 duration-150">+$10k</button>
+<button class="bg-white/5 hover:bg-white/10 text-white font-label font-bold py-2 rounded-lg text-sm border border-white/5 transition-colors active:scale-95 duration-150">+$50k</button>
+<button class="bg-white/5 hover:bg-white/10 text-white font-label font-bold py-2 rounded-lg text-sm border border-white/5 transition-colors active:scale-95 duration-150">+$100k</button>
+</div>
+<div class="relative group">
+<input class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-4 font-label text-white focus:outline-none focus:ring-1 focus:ring-primary-container/50 transition-all placeholder:text-slate-600" placeholder="Custom Bid Amount" type="text"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 font-label text-sm uppercase">USD</span>
+</div>
+<button class="w-full bg-gradient-to-b from-[#0052ff] to-[#0038b6] hover:brightness-110 text-white font-headline font-extrabold py-5 rounded-xl shadow-lg shadow-blue-500/20 active:scale-95 transition-all duration-200 tracking-tight text-lg">
+                                    PLACE BID
+                                </button>
+</div>
+<div class="flex items-center justify-center gap-4 text-[10px] font-label text-slate-500 uppercase tracking-widest">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">security</span> SSL Secure</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">credit_card</span> 5% Buyer Premium</span>
+</div>
+</div>
+</div>
+<!-- Auction Statistics -->
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel rounded-xl p-4">
+<span class="material-symbols-outlined text-primary-fixed-dim block mb-2" style="font-variation-settings: 'FILL' 1;">visibility</span>
+<span class="block font-headline font-bold text-white text-lg">1,402</span>
+<span class="block font-label text-[10px] text-slate-500 uppercase tracking-widest">Watching</span>
+</div>
+<div class="glass-panel rounded-xl p-4">
+<span class="material-symbols-outlined text-primary-fixed-dim block mb-2" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="block font-headline font-bold text-white text-lg">48</span>
+<span class="block font-label text-[10px] text-slate-500 uppercase tracking-widest">Total Bids</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Navigation Shell -->
+<div class="md:hidden fixed bottom-0 w-full z-50 bg-[#1c1b1c]/80 backdrop-blur-2xl border-t border-white/5 shadow-[0_-10px_40px_rgba(0,0,0,0.5)] rounded-t-2xl">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-[#0052ff] scale-110">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Live</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Catalog</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">grade</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Watchlist</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 hover:text-white transition-all">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-label text-[10px] uppercase tracking-widest mt-1">Bids</span>
+</div>
+</div>
+</div>
+</body></html>

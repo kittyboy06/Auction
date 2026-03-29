@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  BUYER
+  SELLER
+  ADMIN
+}
+
+enum AuctionStatus {
+  ACTIVE
+  CLOSED
+}
+
+model User {
+  id            String    @id @default(uuid())
+  name          String
+  email         String    @unique
+  password_hash String
+  role          Role      @default(BUYER)
+  created_at    DateTime  @default(now())
+  
+  // Relations
+  auctions      Auction[] @relation("SellerAuctions")
+  bids          Bid[]     @relation("UserBids")
+  won_auctions  Auction[] @relation("WinnerAuctions")
+}
+
+model Auction {
+  id                  String        @id @default(uuid())
+  title               String
+  description         String
+  image_url           String?
+  start_price         Float
+  end_time            DateTime
+  status              AuctionStatus @default(ACTIVE)
+  current_highest_bid Float         @default(0)
+  created_at          DateTime      @default(now())
+
+  // Relations
+  seller_id         String
+  seller            User      @relation("SellerAuctions", fields: [seller_id], references: [id])
+  
+  highest_bidder_id String?
+  highest_bidder    User?     @relation("WinnerAuctions", fields: [highest_bidder_id], references: [id])
+  
+  bids              Bid[]     @relation("AuctionBids")
+}
+
+model Bid {
+  id         String   @id @default(uuid())
+  amount     Float
+  created_at DateTime @default(now())
+
+  // Relations
+  auction_id String
+  auction    Auction  @relation("AuctionBids", fields: [auction_id], references: [id])
+  
+  bidder_id  String
+  bidder     User     @relation("UserBids", fields: [bidder_id], references: [id])
+}
