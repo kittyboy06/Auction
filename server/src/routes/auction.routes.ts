@@ -73,7 +73,7 @@ router.get('/', async (req: Request, res: Response): Promise<any> => {
 // Get Auction by ID (including Bid history)
 router.get('/:id', async (req: Request, res: Response): Promise<any> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const auction = await prisma.auction.findUnique({
       where: { id },
       include: {
